@@ -15,3 +15,12 @@ cd products-filtering-server
 npm install
 npm run startDev
 ```
+
+### API Endpoints
+- GET /products
+- GET /product/:id
+- POST /product
+- PUT /product/:id
+- DELETE /product/:id
+
+### Hosted on Render: [products filtering](https://products-filtering-b798.onrender.com/api/v1/products)
