@@ -52,3 +52,37 @@ const getAllProducts = asyncHandler(async (req, res) => {
   res.status(StatusCodes.OK).json({ products, total });
 });
 
+
+// Get single product
+const getProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  if (!product) {
+    res.status(StatusCodes.NOT_FOUND);
+    throw new Error("Product not found");
+  }
+  res.status(StatusCodes.OK).json(product);
+});
+
+// Update product
+const updateProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findByIdAndUpdate(req.params.id , req.body, {
+    new: true,
+    runValidators: true,
+  });
+  if (!product) {
+    res.status(StatusCodes.NOT_FOUND);
+    throw new Error("Product not found");
+  }
+  res.status(StatusCodes.OK).json(product);
+}
+);
+
+// Delete product
+const deleteProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findByIdAndDelete(req.params.id);
+  if (!product) {
+    res.status(StatusCodes.NOT_FOUND);
+    throw new Error("Product not found");
+  }
+  res.status(StatusCodes.OK).json({ message: "Product deleted successfully" });
+});
