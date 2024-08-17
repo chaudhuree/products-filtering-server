@@ -86,3 +86,11 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
   res.status(StatusCodes.OK).json({ message: "Product deleted successfully" });
 });
+
+module.exports = {
+  createProduct,
+  getAllProducts,
+  getProduct,
+  updateProduct,
+  deleteProduct,
+};
