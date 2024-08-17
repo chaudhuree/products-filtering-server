@@ -29,10 +29,10 @@ app.use(helmet({crossOriginResourcePolicy: false}))
 
 
 // routes middleware
-// const routesPath = path.resolve(__dirname, './routes');
-// readdirSync(routesPath).map((r) =>
-//   app.use("/api/v1", require(path.join(routesPath, r)))
-// );
+const routesPath = path.resolve(__dirname, './routes');
+readdirSync(routesPath).map((r) =>
+  app.use("/api/v1", require(path.join(routesPath, r)))
+);
 
 
 // routes
