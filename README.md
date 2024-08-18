@@ -24,3 +24,5 @@ npm run startDev
 - DELETE /product/:id
 
 ### Hosted on Render: [products filtering](https://products-filtering-b798.onrender.com/api/v1/products)
+
+### Hosted on Vercel: [products filtering](https://products-filtering-server.vercel.app/api/v1/products)
